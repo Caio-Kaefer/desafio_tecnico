@@ -1,0 +1,40 @@
+.img-grid-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 200px; /* Add margin on top */
+}
+
+.img-grid {
+  display: flex;
+  width: 85%; /* Adjust width as needed */
+  height: 400px; /* Adjust height as needed */
+  justify-content: space-between;
+}
+
+.left-image,
+.upper-image,
+.lower-image {
+  flex: 1;
+  position: relative; /* Ensure positioning context for child elements */
+  overflow: hidden; /* Hide overflow for the zoom effect */
+  margin-right: 10px; /* Add spacing between images */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.lower-image {
+  margin-bottom: 10px; /* Add spacing between upper and lower images */
+}
+
+.left-image img,
+.upper-image img,
+.lower-image img {
+  width: 100%; /* Ensure images fill their containers */
+  height: 100%; /* Ensure images fill their containers */
+  transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+}
+
+.left-image:hover img,
+.upper-image:hover img,
+.lower-image:hover img {
+  transform: scale(1.1); /* Zoom in a little bit on hover */
+}
