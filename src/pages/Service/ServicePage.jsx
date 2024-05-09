@@ -4,6 +4,8 @@ import { getServiceById } from '../../Data/DataService';
 import './ServicePage.css';
 import Navbar from '../../components/Navbar/NavBar';
 import ServiceInputs from '../../components/ServiceInputs/ServiceInputs';
+import Footer from '../../components/Footer/Footer';
+
 
 function ServicePage() {
   const { id } = useParams();
@@ -27,6 +29,7 @@ function ServicePage() {
             <ServiceInputs total={service.price}/>
           </div>
         </div>
+        <Footer/>
     </div>
   );
 }

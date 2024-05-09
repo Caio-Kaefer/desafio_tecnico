@@ -18,7 +18,6 @@ function WelcomePage() {
       <ServiceList services={services} title={"Obras"} /> 
       <ImgGrid/>
       <ServiceList services={services} title={"Logistica"} /> 
-      
       <Footer/>
     </div>
   );
