@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import './MainSlider.css'
 
 function MainSlider() {
   const settings = {
@@ -19,7 +20,7 @@ function MainSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div className="image">
-          <img src="https://russelservico.com.br/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0799%2F5156%2F1014%2Ffiles%2F20anos-d.jpg%3Fv%3D1707239982&w=1920&q=75" style={{ width: '100%' }} />
+          <img src="https://russelservico.com.br/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0799%2F5156%2F1014%2Ffiles%2F20anos-d.jpg%3Fv%3D1707239982&w=1920&q=75" style={{ width: '100%'}} />
         </div>
         <div className="image">
           <img src="https://russelservico.com.br/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0799%2F5156%2F1014%2Ffiles%2F20anos-d.jpg%3Fv%3D1707239982&w=1920&q=75" style={{ width: '100%' }} />

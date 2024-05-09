@@ -1,38 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import './ServiceInputs.css'; // Assume you have a CSS file for styling
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const ServiceInputs = () => {
-  // State to track the selected button in each group
+const ServiceInputs = ({total}) => {
+
   const [selectedButtonGroup1, setSelectedButtonGroup1] = useState(0);
   const [selectedButtonGroup2, setSelectedButtonGroup2] = useState(null);
-  const [numberInput1, setNumberInput1] = useState(0);
+  const [months, setMonths] = useState(0);
   const [numberInput2, setNumberInput2] = useState(0);
-  const [textInput, setTextInput] = useState('');
+  const [professionals, setProfessionals] = useState(0);
+  const [obs, setobs] = useState('');
   const [states, setStates] = useState([]);
   const [selectedState, setSelectedState] = useState('');
   const [showMonthlyInput, setShowMonthlyInput] = useState(false);
 
-  // Function to handle click on buttons in group 1
   const handleClickGroup1 = (index) => {
     setSelectedButtonGroup1(index === selectedButtonGroup1 ? null : index);
-    setShowMonthlyInput(index === 1); // Show monthly input when "Mensal" is selected
-    // If "Diario" is selected, reset the second number input to 0
+    setShowMonthlyInput(index === 1); 
     if (index === 0) {
       setNumberInput2(0);
     }
   };
 
-  // Function to handle click on buttons in group 2
   const handleClickGroup2 = (index) => {
     setSelectedButtonGroup2(index === selectedButtonGroup2 ? null : index);
   };
 
-  // Fetch states from IBGE API on component mount
   useEffect(() => {
     fetchStates();
   }, []);
 
-  // Fetch states from IBGE API
   const fetchStates = async () => {
     try {
       const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
@@ -40,7 +37,6 @@ const ServiceInputs = () => {
         throw new Error('Failed to fetch states');
       }
       const data = await response.json();
-      // Extract state names from the data
       const stateNames = data.map((state) => state.nome);
       setStates(stateNames);
     } catch (error) {
@@ -48,20 +44,16 @@ const ServiceInputs = () => {
     }
   };
 
-  // Function to handle clicking "Add to Cart" button
   const handleAddToCart = () => {
-    // Create a JavaScript object containing all the information provided by the forms
     const formData = {
       modalidadeContratacao: selectedButtonGroup1 === 0 ? 'Diario' : 'Mensal',
       turno: selectedButtonGroup2 === 0 ? 'Diurno' : 'Noturno',
-      quantidadeProfissionais: numberInput2,
-      observacoes: textInput,
+      quantidadeProfissionais: professionals,
+      observacoes: obs,
     };
-    // Add selected state to formData if "Diario" is selected
     if (selectedButtonGroup1 === 0) {
       formData.estadoAplicacao = selectedState;
     }
-    // Log the formData to the console
     console.log(formData);
   };
 
@@ -103,8 +95,8 @@ const ServiceInputs = () => {
           <div className="input-container">
             <input
               type="number"
-              value={numberInput1}
-              onChange={(e) => setNumberInput1(e.target.value)}
+              value={months}
+              onChange={(e) => setMonths(e.target.value)}
             />
           </div>
         </>
@@ -129,19 +121,24 @@ const ServiceInputs = () => {
       <div className="input-container">
         <input
           type="number"
-          value={numberInput2}
-          onChange={(e) => setNumberInput2(e.target.value)}
+          value={professionals}
+          onChange={(e) => setProfessionals(e.target.value)}
         />
       </div>
-      <p>Observacoes</p>
+      <p>Observação</p>
       <div className="input-container">
         <input
           type="text"
-          value={textInput}
-          onChange={(e) => setTextInput(e.target.value)}
+          value={obs}
+          onChange={(e) => setobs(e.target.value)}
         />
       </div>
-      <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+      <div className='value'>
+        <p>Total:</p>
+        <h2>{total}</h2>
+      </div>
+      <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart <AddShoppingCartIcon/></button>
+      <button className="contract-now-button" onClick={handleAddToCart}>Contrate Agora</button>
     </div>
   );
 };

@@ -19,6 +19,7 @@
   overflow: hidden; /* Hide overflow for the zoom effect */
   margin-right: 10px; /* Add spacing between images */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  border-radius: 20px;
 }
 
 .lower-image {
@@ -31,6 +32,7 @@
   width: 100%; /* Ensure images fill their containers */
   height: 100%; /* Ensure images fill their containers */
   transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  border-radius: 20px;
 }
 
 .left-image:hover img,

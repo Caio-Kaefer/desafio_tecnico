@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('https://russelservico.com.br/_next/static/media/Cellien%20Sans.2c1c3348.ttf') format('woff');
+  }
+
+.slider-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    font-family: Plus Jakarta Sans
+
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; 
+  }
+  
+  .item h1 {
+    font-size: 50px; 
+    margin-right: 10px;
+  }
+  
+  .item h2 {
+    text-align: left;
+    font-size: 18px; 
+    margin: 0; 
+    color: #333;
+
+  }
+
+
+@media screen and (max-width: 768px) {
+    .text-container {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    .item {
+      margin-bottom: 10px; 
+    }
+  
+    .item h1 {
+      font-size: 40px; 
+      margin-right: 0; 
+    }
+  }
+  
+  

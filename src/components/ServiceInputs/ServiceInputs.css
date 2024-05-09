@@ -19,6 +19,10 @@ button {
   background-color: #ddd;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 button:hover {
@@ -36,33 +40,51 @@ label {
 }
 
 input[type="number"],
-input[type="text"] {
+input[type="text"], 
+select {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  width: calc(100% - 10px); /* Adjust width to compensate for label margin */
+  width: 100%; 
   transition: border-color 0.3s ease;
   text-align: center;
 }
 
 input[type="number"]:focus,
-input[type="text"]:focus {
+input[type="text"]:focus,
+select {
   outline: none;
-  border-color: #007bff;
+  border-color: #CD1F26;
 }
 
 .add-to-cart-button {
+   margin-top: 20px;
     width: 100%;
-    border: none; /* Remove default button border */
-    background-color: #fff; /* White background */
-    color: #ff0000; /* Red text */
-    padding: 8px 16px; /* Adjust padding */
-    border-radius: 5px; /* Add rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth background and text color transition */
+    border: none; 
+    background-color: #fff; 
+    color: #CD1F26; 
+    padding: 8px 16px; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contract-now-button{
+  margin-top: 20px;
+    width: 100%;
+    border: none; 
+    background-color:  #CD1F26; 
+    color: #fff; 
+    padding: 8px 16px; 
+    border-radius: 5px; 
+    cursor: pointer;
 }
 
 .add-to-cart-button:hover {
-  background-color: #d10404;
+  background-color: #CD1F26;
+}
+
+.value h2{
+  color: #CD1F26;
 }

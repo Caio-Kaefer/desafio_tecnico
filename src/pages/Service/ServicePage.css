@@ -55,7 +55,10 @@
     justify-content: center;
   }
   
-  
+  .important{
+    color: #CD1F26;
+    font-weight: bold;
+  }
  
   
   .select-button:hover,
@@ -64,3 +67,51 @@
     color: #ffffff;
   }
   
+
+  /* For small screens */
+@media only screen and (max-width: 600px) {
+  .service-details {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .service-image {
+    padding: 0;
+  }
+
+  .service-info {
+    margin-top: 20px;
+  }
+
+  .service-info h2 {
+    font-size: 20px;
+  }
+
+  .service-info p {
+    font-size: 16px;
+  }
+}
+
+/* For medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .service-details {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .service-image {
+    padding: 0;
+  }
+
+  .service-info {
+    margin-top: 20px;
+  }
+
+  .service-info h2 {
+    font-size: 20px;
+  }
+
+  .service-info p {
+    font-size: 16px;
+  }
+}

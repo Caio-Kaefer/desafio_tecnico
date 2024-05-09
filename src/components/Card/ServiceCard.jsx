@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ServiceCard.css'
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 function ServiceCard({ service }) {
   return (
     <div className="service-card">
@@ -9,7 +9,7 @@ function ServiceCard({ service }) {
       <h3>{service.name}</h3>
       <p>{service.price}</p>
       <Link to={`/service/${service.id}`}>
-        <button>Contratar</button>
+        <button>Contratar<AddShoppingCartIcon fontSize='small' /></button>
       </Link>
     </div>
   );
