@@ -3,22 +3,14 @@ import { useParams } from 'react-router-dom';
 import { getServiceById } from '../../Data/DataService';
 import './ServicePage.css';
 import Navbar from '../../components/Navbar/NavBar';
-import ServiceInputs from '../../components/ServiceButtons/ServiceInputs';
-import ServiceList from '../../components/List/ServiceList'; // Importe o componente ServiceList
-import services from '../../Data/Services'
+
+import ServiceInputs from '../../components/ServiceInputs/ServiceInputs';
+import Footer from '../../components/Footer/Footer';
+
 
 function ServicePage() {
-  // Extracting the id parameter from the URL
   const { id } = useParams();
   const service = getServiceById(id);
-
-  // State to keep track of the selected option
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  // Click event handler for the buttons
-  const handleButtonClick = (option) => {
-    setSelectedOption(option);
-  };
 
   return (
     <div className="service-page">
@@ -29,17 +21,17 @@ function ServicePage() {
             <img src={service.img_url} alt={service.name} />
             <div className="service-description">
               <p>{service.desc}</p> 
+
+              <p><div className="important">Importante:</div> Oferecemos expertise profissional para o seu projeto, mas lembramos que fornecemos apenas a mão de obra.Os materiais necessários ficam por conta do cliente.</p>
             </div>
           </div>
           <div className="service-info">
             <h2>{service.name}</h2>
             <p>{service.price}</p> 
-            <ServiceInputs/>
-            <p>Total:</p>
-            <h2>{service.price}</h2>
+            <ServiceInputs total={service.price}/>
           </div>
         </div>
-        <ServiceList services={services} title={"Voce pode se interessar:"} /> 
+        <Footer/>
     </div>
   );
 }

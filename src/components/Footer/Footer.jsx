@@ -45,8 +45,11 @@ const Footer = () => {
           <p>Amazonas: (92) 3030-5866</p>
         </div>
       </div>
-    </footer>
+      <div className="watermark">
+        By Caio Kaefer
+      </div>
+      </footer>
   );
 };
-
 export default Footer;
+

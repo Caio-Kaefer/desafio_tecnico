@@ -1,3 +1,5 @@
+
+/* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -7,17 +9,19 @@
   padding: 20px 0;
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to the bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #fff;
 }
 
 .navbar.scrolled {
   background-color: white;
+  color: #333;
 }
-.navbar.scrolled li a {
-  color: #333; /* Text color when navbar is transparent */
-  text-decoration: none;
-  transition: color 0.3s;
-}
+
+/* Container Styles */
 .container {
   display: flex;
   justify-content: space-between;
@@ -27,36 +31,52 @@
   padding: 0 20px;
 }
 
+
+/* Logo Styles */
 .logo {
-  font-size: 1.5rem;
+  font-size: 30px !important;
   font-weight: bold;
+  color: #f9f9f9;
 }
 
+.navbar.scrolled .logo a {
+  color: #CD1F26;
+}
+
+/* Navigation Links Styles */
 .nav-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links li {
-  margin-left: 20px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-links li a {
-  color: white; /* Text color when navbar is transparent */
+a {
+  color: white;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .navbar.scrolled .nav-links li a {
-  color: black; /* Text color when navbar is not transparent */
+
+  color: black;
 }
 
 .nav-links li a:hover {
-  color: #ff0000;
+  text-decoration: underline;
 }
 
+/* Dropdown Styles */
 .dropdown {
   position: relative;
 }
@@ -68,14 +88,9 @@
   left: 0;
   background-color: #fff;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown-content li a{
-  color: #333; /* Text color when navbar is transparent */
-  text-decoration: none;
-  transition: color 0.3s;
-}
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -83,10 +98,92 @@
 .dropdown-content a {
   display: block;
   padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   color: #333;
   text-decoration: none;
 }
 
 .dropdown-content a:hover {
   background-color: #f9f9f9;
+}
+
+
+/* Sublink Styles */
+.sublink {
+  color: #333 !important;
+}
+
+/* Subtext Styles */
+.subtext {
+  color: #333;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+/* Search Styles */
+.search {
+  height: 10px;
+  background: none;
+  color: white;
+  border-color: #f9f9f9;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content.active {
+    display: block;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-content.active {
+    display: block;
+  }
 }
