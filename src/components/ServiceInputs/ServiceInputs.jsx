@@ -7,7 +7,6 @@ const ServiceInputs = ({total}) => {
   const [selectedButtonGroup1, setSelectedButtonGroup1] = useState(0);
   const [selectedButtonGroup2, setSelectedButtonGroup2] = useState(null);
   const [months, setMonths] = useState(0);
-  const [numberInput2, setNumberInput2] = useState(0);
   const [professionals, setProfessionals] = useState(0);
   const [obs, setobs] = useState('');
   const [states, setStates] = useState([]);
@@ -18,7 +17,7 @@ const ServiceInputs = ({total}) => {
     setSelectedButtonGroup1(index === selectedButtonGroup1 ? null : index);
     setShowMonthlyInput(index === 1); 
     if (index === 0) {
-      setNumberInput2(0);
+      setMonths(0);
     }
   };
 
