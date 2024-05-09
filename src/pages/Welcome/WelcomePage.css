@@ -1,0 +1,8 @@
+.welcome-page {
+  width: auto;
+  max-width: 80vw; /* Adjust max-width as needed */
+
+  /* Add any additional styles you need */
+}
+
+/* Add responsive styles for Navbar, MainSlider, ImgCarrousel, ServiceList, ImgGrid, etc. */

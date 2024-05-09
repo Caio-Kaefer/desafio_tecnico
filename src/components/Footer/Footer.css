@@ -1,0 +1,33 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .footer-links a {
+    text-decoration: none; /* Remove underline */
+    color: #991717; /* Link color */
+    margin: 0 10px; /* Adjust spacing between links */
+  }
+  
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    color: dimgray;
+    justify-content: center;
+  }
+  
+  .footer-column {
+    margin-right: 20px;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 10px;
+  }
+  

@@ -1,0 +1,66 @@
+.service-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+  }
+  
+  .service-details {
+    margin-top: 100px;
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    color: black;
+    text-align: justify;
+    justify-content: center;
+  }
+  
+  .service-image {
+    flex: 1;
+    padding-right: 40px;
+  }
+  
+  .service-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .service-description {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .service-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .service-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .service-info p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .button-groups {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+ 
+  
+  .select-button:hover,
+  .add-to-cart-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
